@@ -1,0 +1,5 @@
+<h4>{{{comment.text}}}</h4>
+
+{{#each comment.kids}}
+  <div>{{child-comment comment=this}}</div>
+{{/each}}

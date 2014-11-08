@@ -1,0 +1,8 @@
+<h1>Top Stories</h1>
+
+<ul>
+{{#each}}
+  <li>{{score}} {{#link-to 'item' this}}{{title}}{{/link-to}} ({{url}})</li>
+{{/each}}
+</ul>
+{{outlet}}
