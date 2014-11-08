@@ -1,5 +1,5 @@
-<h4>{{{comment.text}}}</h4>
+  <h5>{{comment.by}}</h5><p>{{{comment.text}}}</p>
 
-{{#each comment.kids}}
-  <div>{{child-comment comment=this}}</div>
-{{/each}}
+  {{#each comment.kids}}
+  <div>{{child-comment comment=this offset=true}}</div>
+  {{/each}}
