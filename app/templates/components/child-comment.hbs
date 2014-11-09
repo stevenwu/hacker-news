@@ -1,4 +1,6 @@
-  <h5>{{comment.by}}</h5><p>{{{comment.text}}}</p>
+  <h5>{{comment.by}} <span class="glyphicon glyphicon-star"></span>
+  </h5>
+  <p>{{{comment.text}}}</p>
 
   {{#each comment.kids}}
   <div>{{child-comment comment=this offset=true}}</div>
