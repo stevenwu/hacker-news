@@ -15,5 +15,7 @@ export default ApplicationSerializer.extend({
     // else if (Ember.isArray(hash[key])) {
       // throw new Error(fmt('%@ relationship %@(\'%@\') must be a key/value map in Firebase. Example: { "%@": { "%@_id": true } }', [type.toString(), relationship.kind, relationship.type.typeKey, key, relationship.type.typeKey]));
     // }
+  },
+  normalizeBelongsTo: function(type, hash, relationship) {
   }
 });

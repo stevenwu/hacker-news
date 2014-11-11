@@ -1,6 +1,6 @@
 <h3>{{title}}</h1>
-<h6>{{score}} points by {{by}}</h6>
-<div><a>{{url}}</a></div>
+<h6>{{score}} points by {{#link-to 'user' by}}{{by}}{{/link-to}}</h6>
+<div><a {{bind-attr href='url'}}>{{url}}</a></div>
 
 {{#each kids}}
   {{child-comment comment=this}}

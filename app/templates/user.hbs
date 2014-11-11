@@ -1,0 +1,10 @@
+<h1>{{id}}</h1>
+<div><p>{{{about}}}</p></div>
+
+<h4>Recent activity</h4>
+
+{{#each recentActivity}}
+  {{child-comment comment=this ignoreChildren=true}}
+{{/each}}
+
+
