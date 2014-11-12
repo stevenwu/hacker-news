@@ -1,9 +1,9 @@
-<h1>{{id}}</h1>
-<div><p>{{{about}}}</p></div>
+<h1>{{user.id}}</h1>
+<div><p>{{{user.about}}}</p></div>
 
 <h4>Recent activity</h4>
 
-{{#each recentActivity}}
+{{#each submissions}}
   {{child-comment comment=this ignoreChildren=true}}
 {{/each}}
 

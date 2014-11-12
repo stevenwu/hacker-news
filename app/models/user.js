@@ -5,5 +5,6 @@ export default DS.Model.extend({
   created: DS.attr(),
   karma: DS.attr(),
   about: DS.attr(),
-  submitted: DS.hasMany('item', {async: true})
+  // submitted: DS.hasMany('item', {async: true})
+  submitted: DS.attr()
 });
