@@ -17,7 +17,6 @@ export default DS.Model.extend({
   parts: DS.attr(),
 
   shortUrl: function() {
-    // var pattern = new RegExp('(?:https|http)://(?:www\.)?((?:[a-z1-9-]+\.){1,2}(?:[a-z]{2,10}))/', 'i');
     var pattern = /((?:www\.){0,1}(?:[a-z0-9]+(?:-[a-z0-9]+)*\.)+[a-z]{2,})/
     if (this.get('url')) {
       var match = this.get('url').match(pattern);

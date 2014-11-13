@@ -4,7 +4,12 @@
 <h4>Recent activity</h4>
 
 {{#each submissions}}
-  {{child-comment comment=this ignoreChildren=true}}
+  {{#if this.parent}}
+    {{child-comment comment=this.parent ignoreChildren=true}}
+    {{child-comment comment=this ignoreChildren=true offset=true}}
+  {{else}}
+    {{child-comment comment=this ignoreChildren=true}}
+  {{/if}}
 {{/each}}
 
 
