@@ -29,9 +29,5 @@ export default DS.Model.extend({
 
   timestamp: function() {
     return moment.unix(this.get('time')).fromNow();
-  }.property('time'),
-
-  wasDeleted: function() {
-    return this.get('deleted');
-  }.property('deleted')
+  }.property('time')
 });
