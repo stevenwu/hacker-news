@@ -3,4 +3,16 @@ $icon-font-path: '/assets/bootstrap/' !default;
 
 html, body {
   /* margin: 20px; */
+  font-size: 16px;
+  line-height: 1.5em;
+}
+
+.score-info {
+  display: inline-block;
+  width: 65px;
+}
+
+.comment-info {
+  display: inline-block;
+  width: 50px;
 }

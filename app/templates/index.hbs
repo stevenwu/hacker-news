@@ -1,8 +1,22 @@
-<h1>Top Stories</h1>
+<h1>Hacker News Reader</h1>
 
-<ul>
+<ul class='list-unstyled'>
 {{#each}}
-  <li>{{score}} {{#link-to 'item' this}}{{title}}{{/link-to}} ({{url}})</li>
+  <li>
+
+  <div class='score-info'>
+    <span class='glyphicon glyphicon-arrow-up'></span>
+    {{score}}
+  </div>
+
+  <div class='comment-info'>
+    <span class='glyphicon glyphicon-comment'></span> 
+    {{kids.length}}
+  </div>
+
+  {{#link-to 'item' this}}{{title}}{{/link-to}} 
+  (<a {{bind-attr href='url'}}>{{shortUrl}}</a>)
+  </li>
 {{/each}}
 </ul>
 {{outlet}}
