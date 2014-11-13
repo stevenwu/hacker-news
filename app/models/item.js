@@ -17,7 +17,11 @@ export default DS.Model.extend({
   parts: DS.attr(),
 
   shortUrl: function() {
-    var pattern = new RegExp('(?:http|https)://(?:www\.)?((?:[a-z1-9]+\.){1,2}(?:[a-z]{2,10}))/', 'i');
-    return this.get('url').match(pattern)[1];
+    // var pattern = new RegExp('(?:https|http)://(?:www\.)?((?:[a-z1-9-]+\.){1,2}(?:[a-z]{2,10}))/', 'i');
+    var pattern = /((?:www\.){0,1}(?:[a-z0-9]+(?:-[a-z0-9]+)*\.)+[a-z]{2,})/
+    var match = this.get('url').match(pattern);
+    if (match) {
+      return match[1];
+    }
   }.property('url')
 });
