@@ -1,5 +1,3 @@
-<h1>Hacker News Reader</h1>
-
 <ul class='list-unstyled'>
 {{#each}}
   <li class='story'>
@@ -10,12 +8,15 @@
   </div>
 
   <div class='comment-info'>
-    <span class='glyphicon glyphicon-comment'></span> 
+    <span class='glyphicon glyphicon-comment'></span>
     {{kids.length}}
   </div>
 
-  {{#link-to 'item' this}}{{title}}{{/link-to}} 
+  <div class='story-item'>
+  {{#link-to 'item' this}}{{title}}{{/link-to}}
   (<a {{bind-attr href='url'}}>{{shortUrl}}</a>)
+  <span class='story-details'>by {{by}} {{timestamp}}</span>
+  </div>
   </li>
 {{/each}}
 </ul>

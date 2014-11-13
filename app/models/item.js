@@ -23,5 +23,9 @@ export default DS.Model.extend({
     if (match) {
       return match[1];
     }
-  }.property('url')
+  }.property('url'),
+
+  timestamp: function() {
+    return moment.unix(this.get('time')).fromNow();
+  }.property('time')
 });

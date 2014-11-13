@@ -1,10 +1,14 @@
 $icon-font-path: '/assets/bootstrap/' !default;
+$navbar-default-color: #fff;
+$navbar-default-bg: #e1563f;
+$navbar-default-brand-color: #fff;
 @import 'bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap';
+
 
 html, body {
   /* margin: 20px; */
   font-size: 16px;
-  line-height: 1.5em;
+  line-height: 1.6em;
 }
 
 .score-info {
@@ -19,4 +23,16 @@ html, body {
 
 .story {
   margin-bottom: 4px;
+}
+
+footer {
+  height: 50px;
+}
+
+.story-item {
+  display: inline-block;
+}
+
+.story-details {
+  font-size: 14px;
 }
