@@ -22,7 +22,12 @@ html, body {
 }
 
 .story {
-  margin-bottom: 4px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  height: 40px;
 }
 
 footer {
@@ -30,9 +35,13 @@ footer {
 }
 
 .story-item {
-  display: inline-block;
+  /* display: inline-block; */
 }
 
 .story-details {
   font-size: 14px;
+}
+
+.story-actions {
+  margin-left: auto;
 }

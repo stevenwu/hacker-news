@@ -5,6 +5,8 @@
 
   {{#unless ignoreChildren}}
   {{#each comment.kids}}
+    {{#unless this.deleted}}
   <div>{{child-comment comment=this offset=true}}</div>
+    {{/unless}}
   {{/each}}
   {{/unless}}

@@ -3,6 +3,8 @@
 <div><a {{bind-attr href='url'}}>{{url}}</a></div>
 
 {{#each kids}}
-  {{child-comment comment=this}}
+  {{#unless this.deleted}}
+    {{child-comment comment=this}}
+  {{/unless}}
 {{/each}}
 {{outlet}}

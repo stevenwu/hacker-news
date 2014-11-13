@@ -13,9 +13,16 @@
   </div>
 
   <div class='story-item'>
-  {{#link-to 'item' this}}{{title}}{{/link-to}}
-  (<a {{bind-attr href='url'}}>{{shortUrl}}</a>)
-  <span class='story-details'>by {{by}} {{timestamp}}</span>
+    {{#link-to 'item' this}}{{title}}{{/link-to}}
+    (<a {{bind-attr href='url'}}>{{shortUrl}}</a>)
+
+    <span class='story-details'>by {{by}} {{timestamp}}</span>
+  </div>
+
+  <div class='story-actions'>
+    <button type='button' class='btn btn-default btn-xs disabled'>
+    <span class='glyphicon glyphicon-pushpin'></span> Pin
+    </button>
   </div>
   </li>
 {{/each}}
