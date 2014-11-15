@@ -1,0 +1,15 @@
+<h1>Login</h1>
+
+<div class='row'>
+<form>
+  <div class='form-group col-md-4'>
+    {{input value=email class='form-control email' placeholder='Your Email'}}
+  </div>
+
+  <div class='form-group col-md-4'>
+    {{input type='password' value=password class='form-control password' placeholder='Create a Password'}}
+  </div>
+
+  <button class='btn btn-default submit' type=submit {{action 'login'}}>Log In</button>
+</form>
+</div>
