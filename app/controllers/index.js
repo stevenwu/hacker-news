@@ -2,21 +2,15 @@ import Ember from 'ember';
 import AccountAdapter from '../adapters/account';
 
 export default Ember.ArrayController.extend({
+  needs: 'application',
   firebase: AccountAdapter,
 
   actions: {
-    pinStory: function() {
-      var account = this.store.createRecord('account', {
-        email: null,
-        following: null,
-        favorites: null,
-        pins: null
+    pinStory: function(story) {
+      this.get('controllers.application.currentUser').then(function(o) {
+        o.get('pins').push(story.get('id'));
+        o.save();
       });
-      account.setProperties({
-        email: 'admin@example.com',
-        pins: [8602936]
-      });
-      account.save();
     }
   }
 });
