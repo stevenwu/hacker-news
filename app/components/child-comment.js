@@ -1,8 +1,9 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  classNameBindings: ['offset:col-md-offset-1'],
+  classNameBindings: ['offset:col-md-offset-1', 'collapse'],
   offset: false,
+  collapse: false,
   timestamp: function() {
     return moment.unix(this.get('comment.time')).fromNow();
   }.property('time'),
@@ -41,6 +42,10 @@ export default Ember.Component.extend({
           console.log('Error: Comment was not saved');
         });
       });
+    },
+
+    hide: function() {
+      this.set('collapse', true);
     }
   }
 });
