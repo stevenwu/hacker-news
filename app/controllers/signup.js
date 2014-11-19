@@ -5,13 +5,14 @@ export default Ember.Controller.extend({
 
   actions: {
     signUp: function() {
+      var _this = this;
       this.get('firebase').createUser({
         email: this.get('email'),
         password: this.get('password')
       }, function(error) {
         if (error === null) {
           console.log('User created succesfully.');
-          this.transitionTo('login');
+          _this.transitionToRoute('login');
         } else {
           console.log('Error creating user:' + error);
         }
