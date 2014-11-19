@@ -1,12 +1,15 @@
-  <h5>{{#link-to 'user' comment.by}}{{comment.by}}{{/link-to}} <span class="glyphicon glyphicon-star"></span><p>{{timestamp}}</p>
-  </h5>
-  <p>{{comment.title}}</p>
-  <p>{{{comment.text}}}</p>
+<h5>{{#link-to 'user' comment.by}}{{comment.by}}{{/link-to}}
 
-  {{#unless ignoreChildren}}
-  {{#each comment.kids}}
-    {{#unless this.deleted}}
-  <div>{{child-comment comment=this offset=true}}</div>
-    {{/unless}}
-  {{/each}}
+<button {{action 'followUser' comment.by}} class='btn btn-default btn-xs'>Follow <span class="glyphicon glyphicon-user"></span></button>
+<p>{{timestamp}} <button {{action 'saveComment'}} class='btn btn-default btn-xs'>Save <span class='glyphicon glyphicon-star'</button></p>
+</h5>
+<p>{{comment.title}}</p>
+<p>{{{comment.text}}}</p>
+
+{{#unless ignoreChildren}}
+{{#each kid in comment.kids}}
+  {{#unless kid.deleted}}
+    <div>{{child-comment comment=kid offset=true}}</div>
   {{/unless}}
+{{/each}}
+{{/unless}}
