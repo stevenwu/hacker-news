@@ -1,6 +1,9 @@
 $icon-font-path: '/assets/bootstrap/' !default;
 $navbar-default-color: rgb(255, 255, 255);
 $navbar-default-bg: rgb(225, 86, 63);
+$navbar-btn-default: rgb(255, 255, 255);
+$navbar-btn-bg: rgb(225,86,63);
+$navbar-btn-border: rgb(255,255,255);
 $navbar-default-brand-color: rgb(255, 255, 255);
 @import 'bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap';
 
@@ -44,3 +47,11 @@ footer {
 .story-actions {
   margin-left: auto;
 }
+
+.navbar-btn {
+  background-color: $navbar-btn-bg;
+  border-color: $navbar-btn-border;
+  color: $navbar-btn-default;
+}
+
+

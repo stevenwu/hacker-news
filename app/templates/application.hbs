@@ -3,6 +3,14 @@
     <div class='navbar-header'>
       <a class='navbar-brand' href='#'>Hacker News Reader</a>
     </div>
+
+    <div class='nav navbar-nav navbar-right'>
+      {{#if currentUser.email}}
+        <div>{{currentUser.email}}</div>
+      {{else}}
+        {{#link-to 'login' class='btn btn-default navbar-btn'}}Sign in{{/link-to}}
+      {{/if}}
+    </div>
   </div>
 </header>
 
