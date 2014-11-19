@@ -17,7 +17,7 @@ export default Ember.Component.extend({
 
       var followTarget = userId;
 
-      var record = this.store.find('account', uid).then(addFollowing);
+      this.store.find('account', uid).then(addFollowing);
       function addFollowing(user) {
         var newList = user.get('following').push(userId);
         user.save().then(null, function(error) {
@@ -27,8 +27,20 @@ export default Ember.Component.extend({
 
       console.log('Following ' + userId);
     },
+
     saveComment: function(commentId) {
-      console.log('Comment saved');
+      var sessionData = sessionStorage['firebase:session::ember-hacker-news'];
+      var authToken = JSON.parse(sessionData)['token'];
+      var uid = JSON.parse(sessionData)['uid'];
+
+      this.store.find('account', uid).then(function(o) {
+        o.get('favorites').push(commentId);
+        o.save().then(function(success) {
+          console.log('Comment saved');
+        }, function(error) {
+          console.log('Error: Comment was not saved');
+        });
+      });
     }
   }
 });
