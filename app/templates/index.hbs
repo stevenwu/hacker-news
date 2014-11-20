@@ -20,9 +20,11 @@
   </div>
 
   <div class='story-actions'>
-    <button type='button' {{action 'pinStory' this}} class='btn btn-default btn-xs'>
-    <span class='glyphicon glyphicon-pushpin'></span> Pin
-    </button>
+    {{#if hasSession}}
+      <button type='button' {{action 'pinStory' this}} class='btn btn-default btn-xs'>
+        <span class='glyphicon glyphicon-pushpin'></span> Pin
+      </button>
+    {{/if}}
   </div>
   </li>
 {{/each}}

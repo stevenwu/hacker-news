@@ -4,6 +4,7 @@ import AccountAdapter from '../adapters/account';
 export default Ember.ArrayController.extend({
   needs: 'application',
   firebase: AccountAdapter,
+  hasSession: Ember.computed.alias('controllers.application.hasSession'),
 
   actions: {
     pinStory: function(story) {
