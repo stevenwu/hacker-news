@@ -1,6 +1,8 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+  needs: ['application'],
+  hasSession: Ember.computed.alias('controllers.application.hasSession'),
   classNameBindings: ['offset:col-md-offset-1', 'collapse'],
   offset: false,
   collapse: false,

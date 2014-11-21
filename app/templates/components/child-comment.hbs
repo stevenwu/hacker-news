@@ -1,8 +1,14 @@
 <h5><button {{action 'hide'}}><span class='glyphicon glyphicon-chevron-up'></span></button>
 {{#link-to 'user' comment.by}}{{comment.by}}{{/link-to}}
 
-<button {{action 'followUser' comment.by}} class='btn btn-default btn-xs'>Follow <span class="glyphicon glyphicon-user"></span></button>
-<p>{{timestamp}} <button {{action 'saveComment' comment.id}} class='btn btn-default btn-xs'>Save <span class='glyphicon glyphicon-star'</button></p>
+{{#if hasSession}}<button {{action 'followUser' comment.by}} class='btn btn-default btn-xs'>Follow <span class="glyphicon glyphicon-user"></span></button>
+{{/if}}
+<p>
+  {{timestamp}} 
+  {{#if hasSession}}
+    <button {{action 'saveComment' comment.id}} class='btn btn-default btn-xs'>Save <span class='glyphicon glyphicon-star'</button>
+  {{/if}}
+</p>
 </h5>
 <p>{{comment.title}}</p>
 <p>{{{comment.text}}}</p>
