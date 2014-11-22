@@ -1,0 +1,35 @@
+<h1>Pinned Stories</h1>
+
+<ul class='list-unstyled'>
+{{#each pin in controller}}
+  <li class='story'>
+
+  <div class='score-info'>
+    <span class='glyphicon glyphicon-arrow-up'></span>
+    {{pin.score}}
+  </div>
+
+  <div class='comment-info'>
+    <span class='glyphicon glyphicon-comment'></span>
+    {{pin.kids.length}}
+  </div>
+
+  <div class='story-item'>
+    {{#link-to 'item' this}}{{pin.title}}{{/link-to}}
+    (<a {{bind-attr href='pin.url'}}>{{pin.shortUrl}}</a>)
+
+    <span class='story-details'>by {{pin.by}} {{pin.timestamp}}</span>
+  </div>
+
+  <div class='story-actions'>
+    {{#if hasSession}}
+      <button type='button' {{action 'pinStory' pin}} class='btn btn-default btn-xs'>
+        <span class='glyphicon glyphicon-pushpin'></span> Pin
+      </button>
+    {{/if}}
+  </div>
+  </li>
+{{/each}}
+</ul>
+
+{{outlet}}

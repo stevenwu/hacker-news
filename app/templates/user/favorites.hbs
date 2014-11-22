@@ -1,0 +1,7 @@
+<h1>Favorites</h1>
+
+{{#each comment in controller}}
+  {{child-comment comment=comment ignoreChildren=true}}
+{{else}}
+  <div>Save some of your favorite comments</div>
+{{/each}}
