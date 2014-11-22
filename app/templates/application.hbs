@@ -4,6 +4,12 @@
       <a class='navbar-brand' href='#'>Hacker News Reader</a>
     </div>
 
+    <div class='nav navbar-nav navbar-left'>
+      {{#link-to 'user/favorites'}}Favorites{{/link-to}}
+      {{#link-to 'user/following'}}Following{{/link-to}}
+      {{#link-to 'pins'}}Pinned Stories{{/link-to}}
+    </div>
+
     <div class='nav navbar-nav navbar-right'>
       {{#if currentUser.email}}
         <div>{{currentUser.email}}</div>

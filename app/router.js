@@ -12,6 +12,8 @@ Router.map(function() {
   this.route('signup', { path: '/signup' });
   this.route('login');
   this.route('user/favorites');
+  this.route('user/following');
+  this.route('pins');
 });
 
 export default Router;
