@@ -17,7 +17,7 @@ export default DS.Model.extend({
   parts: DS.attr(),
 
   shortUrl: function() {
-    var pattern = /((?:www\.){0,1}(?:[a-z0-9]+(?:-[a-z0-9]+)*\.)+[a-z]{2,})/
+    var pattern = /((?:www\.){0,1}(?:[a-z0-9]+(?:-[a-z0-9]+)*\.)+[a-z]{2,})/;
     if (this.get('url')) {
       var match = this.get('url').match(pattern);
       if (match) {

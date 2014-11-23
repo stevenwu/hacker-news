@@ -15,7 +15,7 @@ export default Ember.Route.extend({
         return user.get('pins').map(function(id) {
           return self.store.find('item', id);
         });
-      })
+      });
     } else {
       return Ember.A();
     }

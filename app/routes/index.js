@@ -14,6 +14,5 @@ export default Ember.Route.extend({
         return self.store.find('item', id);
       }));
     });
-    // return this.store.find('item', 8571159);
   }
 });

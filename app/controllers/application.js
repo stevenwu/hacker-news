@@ -8,7 +8,7 @@ export default Ember.Controller.extend({
       var uid = JSON.parse(sessionData)['uid'];
       return this.store.find('account', uid);
     } else {
-      return {}
+      return {};
     }
   }.property('hasSession')
 });
