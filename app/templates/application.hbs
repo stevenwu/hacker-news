@@ -17,7 +17,9 @@
     </ul>
 
     <div class='header-actions navbar-right'>
-      {{#link-to 'login' class='btn btn-default navbar-btn'}}Sign in{{/link-to}}
+      {{#unless hasSession}}
+        {{#link-to 'login' class='btn btn-default navbar-btn'}}Sign in{{/link-to}}
+      {{/unless}}
     </div>
   </div>
 </nav>

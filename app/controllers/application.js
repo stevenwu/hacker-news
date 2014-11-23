@@ -1,6 +1,11 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
+  setSession: function() {
+    if (sessionStorage['firebase:session::ember-hacker-news']) {
+      this.set('hasSession', true);
+    }
+  }.on('init'),
   hasSession: false,
   currentUser: function() {
     var sessionData = sessionStorage['firebase:session::ember-hacker-news'];
