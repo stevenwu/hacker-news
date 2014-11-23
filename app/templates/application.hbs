@@ -5,9 +5,11 @@
     </div>
 
     <ul class='nav navbar-nav navbar-left'>
+      {{#if hasSession}}
       <li>{{#link-to 'user/favorites'}}Favorites{{/link-to}}</li>
       <li>{{#link-to 'user/following'}}Following{{/link-to}}</li>
       <li>{{#link-to 'pins'}}Pinned Stories{{/link-to}}</li>
+      {{/if}}
     </ul>
 
     <ul class='nav navbar-nav navbar-right'>
