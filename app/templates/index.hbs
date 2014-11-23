@@ -14,7 +14,7 @@
 
   <div class='story-item'>
     {{#link-to 'item' item}}{{item.title}}{{/link-to}}
-    (<a {{bind-attr href='url'}}>{{item.shortUrl}}</a>)
+    (<a {{bind-attr href='item.url'}}>{{item.shortUrl}}</a>)
 
     <span class='story-details'>by {{item.by}} {{item.timestamp}}</span>
   </div>
