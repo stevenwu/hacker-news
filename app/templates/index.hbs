@@ -1,27 +1,27 @@
 <ul class='list-unstyled'>
-{{#each}}
+{{#each item in controller}}
   <li class='story'>
 
   <div class='score-info'>
     <span class='glyphicon glyphicon-arrow-up'></span>
-    {{score}}
+    {{item.score}}
   </div>
 
   <div class='comment-info'>
     <span class='glyphicon glyphicon-comment'></span>
-    {{kids.length}}
+    {{item.kids.length}}
   </div>
 
   <div class='story-item'>
-    {{#link-to 'item' this}}{{title}}{{/link-to}}
-    (<a {{bind-attr href='url'}}>{{shortUrl}}</a>)
+    {{#link-to 'item' item}}{{item.title}}{{/link-to}}
+    (<a {{bind-attr href='url'}}>{{item.shortUrl}}</a>)
 
-    <span class='story-details'>by {{by}} {{timestamp}}</span>
+    <span class='story-details'>by {{item.by}} {{item.timestamp}}</span>
   </div>
 
   <div class='story-actions'>
     {{#if hasSession}}
-      <button type='button' {{action 'pinStory' this}} class='btn btn-default btn-xs'>
+      <button type='button' {{action 'pinStory' item}} class='btn btn-default btn-xs'>
         <span class='glyphicon glyphicon-pushpin'></span> Pin
       </button>
     {{/if}}

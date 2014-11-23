@@ -2,8 +2,8 @@ import Ember from 'ember';
 import AccountAdapter from '../adapters/account';
 
 export default Ember.ArrayController.extend({
-  needs: 'application',
   firebase: AccountAdapter,
+  needs: 'application',
   hasSession: Ember.computed.alias('controllers.application.hasSession'),
 
   actions: {
