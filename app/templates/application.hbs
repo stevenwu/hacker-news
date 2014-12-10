@@ -1,4 +1,4 @@
-<nav class='navbar navbar-default' role='navigation'>
+<nav class='navbar navbar-default navbar-fixed-top material-nav' role='navigation'>
   <div class='container'>
     <div class='navbar-header'>
       <a class='navbar-brand' href='#'>Hacker News Reader</a>
@@ -20,6 +20,7 @@
 
     <div class='header-actions navbar-right'>
       {{#unless hasSession}}
+        {{#link-to 'signup' class='btn btn-default navbar-btn'}}Sign Up{{/link-to}}
         {{#link-to 'login' class='btn btn-default navbar-btn'}}Sign in{{/link-to}}
       {{/unless}}
     </div>
@@ -27,7 +28,9 @@
 </nav>
 
 <div class='container'>
-  {{outlet}}
+  <section class='nav-top-padding'>
+    {{outlet}}
+  </section>
 </div>
 
 <footer>

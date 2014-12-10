@@ -1,3 +1,4 @@
+<div class='container item'>
 <h3>{{title}}</h1>
 <h6>{{score}} points by {{#link-to 'user' by}}{{by}}{{/link-to}}</h6>
 <div><a {{bind-attr href='url'}}>{{url}}</a></div>
@@ -8,3 +9,5 @@
   {{/unless}}
 {{/each}}
 {{outlet}}
+
+</div>
