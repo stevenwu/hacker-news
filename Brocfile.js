@@ -17,6 +17,7 @@ var app = new EmberApp();
 // please specify an object with the list of modules as keys
 // along with the exports of each module as its value.
 
+module.exports = app.toTree();
 app.import('bower_components/moment/moment.js');
 
 var pickFiles = require('broccoli-static-compiler');
